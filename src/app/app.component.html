@@ -1,0 +1,48 @@
+<div>
+  <h1>Football</h1>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<ul>
+  <li leagueName="Premier League" (click)="getCurrentSeason(39)">England</li>
+  <li leagueName="La Liga" (click)="getCurrentSeason(140)">Spain</li>
+  <li leagueName="Ligue 1" (click)="getCurrentSeason(61)">France</li>
+  <li leagueName="Bundesliga" (click)="getCurrentSeason(78)">Germany</li>
+  <li leagueName="Serie A" (click)="getCurrentSeason(135)">Italy</li>
+</ul>
+
+<!-- football-table.component.html -->
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Games</th>
+      <th>W</th>
+      <th>L</th>
+      <th>D</th>
+      <th>Goals Difference</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams[0]">
+      <td>{{ team.team.name }}</td>
+      <td>{{ team.all.played }}</td>
+      <td>{{ team.all.win }}</td>
+      <!-- <td>{{ team.wins }}</td> -->
+      <!-- <td>{{ team.losses }}</td> -->
+      <!-- <td>{{ team.draws }}</td> -->
+      <td>{{ team.goalsDiff }}</td>
+      <td>{{ team.points }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
